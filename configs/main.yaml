@@ -1,0 +1,77 @@
+model:
+  model_type: "lora" # linear, mlp, lora
+  input_dim: 1280
+  num_classes: 22
+  hidden_dims: [256]
+  dropout_rate: 0.2
+  lora_r: 8
+  lora_alpha: 16
+  lora_dropout: 0.2
+  target_modules: ["qkv", "proj", "fc1", "fc2"]
+
+data:
+  features_path: "eagle_features/"
+  slide_table_path: "slide_tables/combined_slide_table.csv"
+  tile_table_path: "slide_tables/combined_tiles_table.csv"
+  label_column: "CATEGORY"
+  patient_column: "PATIENT"
+  batch_size: 12
+  num_workers: 4
+  test_size: 0.15
+  val_size: 0.15
+  use_class_weights: true
+  min_slides: 40
+  random_state: 42
+
+training:
+  num_epochs: 100
+  learning_rate: 0.0001
+  weight_decay: 0.0001
+  optimizer: "adamw"
+  scheduler: "cosine"
+  scheduler_patience: 15
+  scheduler_factor: 0.5
+  patience: 25
+  min_delta: 0.0001
+  log_every_n_steps: 20
+  gradient_clip_val: 0.5
+  best_metric: "accuracy"
+
+device: "cuda"
+output_dir: "./outputs/lora"
+experiment_name: "lora"
+random_seed: 42
+model_weights_dir: "./model_weights"
+mixed_precision: true
+fp16: true
+gradient_accumulation_steps: 4
+  
+wandb:
+  project: "lora-brainpath" 
+  entity: null
+  run_name: "lora"
+  notes: "22-class brain tumor category classification using LoRA adaptation"
+
+class_names:
+  - "Astrocytoma"
+  - "Choroid_Plexus_Tumour"
+  - "Embryonal_Tumour"
+  - "Ependymoma"
+  - "Glioblastoma"
+  - "Glioneuronal"
+  - "Hematological"
+  - "Low_Grade_Glioma"
+  - "Lymphoma"
+  - "Medulloblastoma"
+  - "Melanocytic"
+  - "Meningioma"
+  - "Metastasis"
+  - "Nerve_Tumour"
+  - "Neural_Tumour"
+  - "Oligodendroglioma"
+  - "Other"
+  - "Other_Glioma"
+  - "Pineal"
+  - "Pituitary"
+  - "Soft_Tissue"
+  - "Control"
