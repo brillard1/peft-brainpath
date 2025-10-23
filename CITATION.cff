@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+title: >-
+  Improving Pathology Foundation Models for Brain Tissue
+  using Parameter-Efficient Fine-Tuning
+message: >-
+  If you use this repository, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Abhishek
+    family-names: Rajora
+    affiliation: University of Calgary
+  - given-names: Ankur
+    family-names: Garg
+    affiliation: University of Calgary
+  - given-names: Eugene
+    family-names: Vorontsov
+    affiliation: Paige
+  - given-names: Ana
+    family-names: Nikolic
+    affiliation: University of Calgary
+  - given-names: Samira Ebrahimi
+    family-names: Kahou
+    affiliation: 'University of Calgary, CIFAR AI Chair'
+repository-code: 'https://github.com/brillard1/peft-brainpath'
+date-released: '2025-10-17'

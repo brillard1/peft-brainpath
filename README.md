@@ -1,10 +1,13 @@
 # PEFT in Computational Pathology
 
 ### Improving Pathology Foundation Models for Brain Tissue using Parameter-Efficient Fine-Tuning
+<p align="center">
+  <a href="assets/poster.pdf">📄 <b>Poster Link</b></a>
+</p>
 
 
 ## Abstract
->Foundation models in computational pathology, such as CTransPath, CHIEF, and Virchow2, have demonstrated strong performance on cancer tasks, often integrated into multi-model frameworks like EAGLE for efficient whole-slide image (WSI) analysis. However, their generalization to out-of-distribution (OOD) data remains challenging, especially for anatomically and diagnostically distinct domains such as brain histopathology. We hypothesize that these models, pre-trained on heterogeneous yet predominantly non-brain datasets, have incomplete representation capacity for brain tissue morphologies, particularly for rarer diagnostic categories. Parameter-Efficient Fine-Tuning (PEFT) methods such as LoRA could selectively adapt model to enhance domain-specific representation while retaining the general features learned from large-scale pre- training.
+>Foundation models in computational pathology, such as CTransPath, CHIEF, and Virchow2, have demonstrated strong performance on cancer tasks, often integrated into multi-model frameworks like EAGLE for efficient whole-slide image (WSI) analysis. However, their generalization to out-of-distribution (OOD) data remains challenging, especially for anatomically and diagnostically distinct domains such as brain histopathology. We hypothesize that these models, pre-trained on heterogeneous yet predominantly non-brain datasets, have incomplete representation capacity for brain tissue morphologies, particularly for rarer diagnostic categories. Parameter-Efficient Fine-Tuning (PEFT) methods such as LoRA could selectively adapt model to enhance domain-specific representation while retaining the general features learned from large-scale pre-training.
 
 
 ## 🎯 Method Overview
@@ -137,6 +140,21 @@ python run_lora_evaluation.py \
 ## 🧠 Acknowledgments
 
 This work builds upon several outstanding open-source projects including EAGLE, TransPath, CHIEF, Virchow2, Timm and PEFT. We are grateful to the authors and maintainers of these exceptional resources.
+
+## 📖 Citation
+
+If you find this repository useful in your research, please cite it as follows:
+
+```bibtex
+@software{rajora2025peftbrainpath,
+  author       = {Abhishek Rajora and Ankur Garg and Eugene Vorontsov and Ana Nikolic and Samira Ebrahimi Kahou},
+  title        = {Improving Pathology Foundation Models for Brain Tissue using Parameter-Efficient Fine-Tuning},
+  year         = {2025},
+  publisher    = {University of Calgary},
+  url          = {https://github.com/brillard1/peft-brainpath},
+  note         = {Poster presented at Alberta Biomedical Engineering Conference (AB BME 2025)}
+}
+```
 
 ## 📄 License
 
